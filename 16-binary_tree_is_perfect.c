@@ -30,6 +30,12 @@ expected = ((size_t)1 << (h + 1)) - 1;
 return (sz == expected);
 }
 
+/**
+ * bt_height - computes the height of a binary tree (leaf has height 0)
+ * @tree: pointer to the node
+ *
+ * Return: height value; 0 if @tree is NULL
+ */
 static size_t bt_height(const binary_tree_t *tree)
 {
 size_t hl, hr;
@@ -43,6 +49,12 @@ hr = tree->right ? (1 + bt_height(tree->right)) : 0;
 return ((hl >= hr) ? hl : hr);
 }
 
+/**
+ * bt_size - computes the total number of nodes in a binary tree
+ * @tree: pointer to the node
+ *
+ * Return: number of nodes; 0 if @tree is NULL
+ */
 static size_t bt_size(const binary_tree_t *tree)
 {
 if (tree == NULL)
